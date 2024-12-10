@@ -5,6 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My CV</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Pop-up styling */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 500px;
+            width: 90%;
+            text-align: left;
+            position: relative;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .server-status-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .server-status-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -118,8 +166,39 @@
                     <li><a href="https://casaos.rrizqiaa.freeddns.org" target="_blank">CasaOS</a></li>
                     <li><a href="https://nextcloud.rrizqiaa.freeddns.org" target="_blank">Nextcloud</a></li>
                 </ul>
+                <button class="server-status-btn" onclick="showPopup()">Server Status</button>
             </section>
         </div>
     </div>
+    <!-- Pop-up container -->
+    <div class="popup" id="server-status-popup">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <div id="server-status-content">Loading server status...</div>
+        </div>
+    </div>
+    <script>
+        function showPopup() {
+            const popup = document.getElementById("server-status-popup");
+            const content = document.getElementById("server-status-content");
+
+            // Fetch server status data
+            fetch("server_status.php")
+                .then(response => response.text())
+                .then(data => {
+                    content.innerHTML = data;
+                })
+                .catch(err => {
+                    content.innerHTML = "Failed to load server status.";
+                });
+
+            popup.style.display = "flex";
+        }
+
+        function closePopup() {
+            const popup = document.getElementById("server-status-popup");
+            popup.style.display = "none";
+        }
+    </script>
 </body>
 </html>
