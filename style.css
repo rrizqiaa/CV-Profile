@@ -53,3 +53,20 @@ body {
     margin-bottom: 20px;
 }
 
+a {
+    color: white;
+    text-decoration: none; /* Opsional: Menghapus garis bawah */
+}
+
+a:hover {
+    color: #ccc; /* Opsional: Warna saat link di-hover */
+}
+
+section h2 + ul a {
+    color: white;
+    text-decoration: none;
+}
+
+section h2 + ul a:hover {
+    color: #ccc;
+}
