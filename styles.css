@@ -52,3 +52,12 @@ body {
 .main-content section {
     margin-bottom: 20px;
 }
+
+.main-content section h2 + ul li a {
+    color: white !important; /* Memaksa warna putih diterapkan */
+    text-decoration: none;
+}
+
+.main-content section h2 + ul li a:hover {
+    color: #ccc !important; /* Memaksa warna abu-abu diterapkan saat hover */
+}
