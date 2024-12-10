@@ -53,11 +53,11 @@ body {
     margin-bottom: 20px;
 }
 
-.main-content section h2 + ul li a {
-    color: white !important; /* Memaksa warna putih diterapkan */
-    text-decoration: none;
+.main-content ul li a {
+    color: white !important; /* Mengubah warna teks link menjadi putih */
+    text-decoration: none; /* Menghapus garis bawah link */
 }
 
-.main-content section h2 + ul li a:hover {
-    color: #ccc !important; /* Memaksa warna abu-abu diterapkan saat hover */
+.main-content ul li a:hover {
+    color: #ccc !important; /* Mengubah warna saat hover menjadi abu-abu terang */
 }
