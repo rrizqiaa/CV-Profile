@@ -53,11 +53,12 @@ body {
     margin-bottom: 20px;
 }
 
-.sidebar div h2 + li a {
-    color: white; /* Mengatur warna teks menjadi putih */
-    text-decoration: none; /* Menghapus garis bawah */
+
+section h2 + ul a {
+    color: white;
+    text-decoration: none;
 }
 
-.sidebar div h2 + li a:hover {
-    color: #ccc; /* Warna saat hover menjadi abu-abu terang */
+section h2 + ul a:hover {
+    color: #ccc;
 }
